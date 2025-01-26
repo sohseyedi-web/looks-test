@@ -15,7 +15,7 @@ const SearchHistory = ({ show, setShow }: SearchHistoryTypes) => {
 
   return (
     <div
-      className={`border-2 absolute overflow-y-auto w-full border-[#3d3d3d] bg-[#101010] mt-3 px-4 py-1 text-zinc-400 rounded-2xl transition-all duration-300 ease-in-out ${
+      className={`border-2 z-30 absolute overflow-y-auto w-full border-[#3d3d3d] bg-[#101010] mt-3 px-4 py-1 text-zinc-400 rounded-2xl transition-all duration-300 ease-in-out ${
         show ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
       } overflow-hidden scrollbar`}
     >
