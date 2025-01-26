@@ -11,9 +11,14 @@ export const useSearchStore = create<SearchStore>((set, get) => ({
   // actions
   setSearchTerm: (term) => set({ search: term }),
   addToSearchHistory: (term: string[]) =>
-    set((state) => ({
-      searchHistory: [...state.searchHistory, ...term],
-    })),
+    set((state) => {
+      const uniqueTerms = term.filter(
+        (item) => !state.searchHistory.includes(item)
+      );
+      return {
+        searchHistory: [...state.searchHistory, ...uniqueTerms],
+      };
+    }),
   setLoading: (loading) => set({ loading }),
 
   saveSearch: () => {
