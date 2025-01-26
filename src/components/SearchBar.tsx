@@ -22,7 +22,6 @@ const SearchBar = () => {
   };
 
   return (
-    <>
       <form onSubmit={handleSearchSubmit} className="relative">
         <TextField
           onFocus={() => setShowHistory(true)}
@@ -34,11 +33,10 @@ const SearchBar = () => {
         >
           Search
         </button>
+        {searchHistory.length > 0 && (
+          <SearchHistory show={showHistory} setShow={setShowHistory} />
+        )}
       </form>
-      {searchHistory.length > 0 && (
-        <SearchHistory show={showHistory} setShow={setShowHistory} />
-      )}
-    </>
   );
 };
 
