@@ -7,9 +7,11 @@ export const useSearchStore = create<SearchStore>((set, get) => ({
   searchHistory: [],
   loading: false,
   images: [],
+  error: "",
 
   // actions
   setSearchTerm: (term) => set({ search: term }),
+  setError: (term) => set({ error: term }),
   addToSearchHistory: (term: string[]) =>
     set((state) => {
       const uniqueTerms = term.filter(
