@@ -19,10 +19,10 @@ const SearchHistory = ({ show, setShow }: SearchHistoryTypes) => {
         show ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
       } overflow-hidden scrollbar`}
     >
-      {searchHistory?.map((item, index) => (
+      {searchHistory?.map((item) => (
         <span
           className="text-2xl block my-2 cursor-pointer hover:bg-[#313131] rounded-lg p-2"
-          key={index}
+          key={item}
           onClick={() => handleHistoryClick(item)}
         >
           {item}
