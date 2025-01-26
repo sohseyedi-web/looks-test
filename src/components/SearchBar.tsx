@@ -5,8 +5,14 @@ import SearchHistory from "./SearchHistory";
 import fetchImages from "../service/imageService";
 
 const SearchBar = () => {
-  const { saveSearch, search, addToImageData, searchHistory, setLoading } =
-    useSearchStore();
+  const {
+    saveSearch,
+    search,
+    addToImageData,
+    searchHistory,
+    setLoading,
+    setError,
+  } = useSearchStore();
   const [showHistory, setShowHistory] = useState<boolean>(false);
 
   const getImageData = async (value: string) => {
@@ -14,8 +20,8 @@ const SearchBar = () => {
     try {
       const data = await fetchImages(value);
       addToImageData(data?.results);
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      setError(error?.message);
     } finally {
       setLoading(false);
     }
@@ -36,7 +42,7 @@ const SearchBar = () => {
       />
       <button
         type="submit"
-        className="absolute right-2 rounded-2xl px-4 top-1.5 h-[80%] bg-[#313131] text-zinc-400"
+        className="absolute hover:bg-black transition-all duration-300 text-lg right-0 rounded-2xl px-8 border-[#3d3d3d] border-2 top-0 h-full bg-[#313131] text-zinc-400"
       >
         Search
       </button>
