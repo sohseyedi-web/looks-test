@@ -4,7 +4,6 @@ const BASE_URL = "https://api.unsplash.com";
 
 const app = axios.create({
   baseURL: BASE_URL,
-  withCredentials: true,
 });
 
 const api = {
