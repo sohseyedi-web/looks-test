@@ -5,7 +5,7 @@ import Loading from "./components/Loading";
 import ImageBox from "./components/ImageBox";
 
 function App() {
-  const { addToSearchHistory,images,loading } = useSearchStore();
+  const { addToSearchHistory,images,loading,error } = useSearchStore();
 
   useEffect(() => {
     try {
@@ -21,6 +21,7 @@ function App() {
   return (
     <main className="max-w-4xl p-4 mx-auto">
       <SearchBar />
+      {error && <p className="text-red-500 text-center mt-5 text-2xl">{error}</p>}
       {loading ? (
         <Loading />
       ) : (
