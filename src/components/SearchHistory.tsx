@@ -2,10 +2,10 @@ import { useSearchStore } from "../store/useStore";
 
 type SearchHistoryTypes = {
   show: boolean;
-  setShow : React.Dispatch<React.SetStateAction<boolean>>
+  setShow: React.Dispatch<React.SetStateAction<boolean>>;
 };
 
-const SearchHistory = ({show,setShow} : SearchHistoryTypes) => {
+const SearchHistory = ({ show, setShow }: SearchHistoryTypes) => {
   const { searchHistory, setSearchTerm } = useSearchStore();
 
   const handleHistoryClick = (selectedQuery: string) => {
@@ -15,9 +15,9 @@ const SearchHistory = ({show,setShow} : SearchHistoryTypes) => {
 
   return (
     <div
-      className={`border-2 border-[#3d3d3d] bg-[#101010] mt-3 px-4 py-1 text-zinc-400 rounded-2xl transition-all duration-300 ease-in-out ${
+      className={`border-2 absolute overflow-y-auto w-full border-[#3d3d3d] bg-[#101010] mt-3 px-4 py-1 text-zinc-400 rounded-2xl transition-all duration-300 ease-in-out ${
         show ? "opacity-100 max-h-96" : "opacity-0 max-h-0"
-      } overflow-hidden`}
+      } overflow-hidden scrollbar`}
     >
       {searchHistory?.map((item, index) => (
         <span
