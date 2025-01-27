@@ -49,7 +49,7 @@ npm install
 
 Start the application:
 
-npm start
+npm run dev
 
 Open your browser and navigate to:
 
