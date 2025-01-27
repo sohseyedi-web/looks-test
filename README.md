@@ -33,12 +33,13 @@ Lazy Loading: Implemented lazy loading for images to enhance performance and use
 ## Installation
 
 Clone the repository:
-
+```bash
 git clone <https://github.com/sohseyedi-web/looks-test>
-
+```
 Navigate to the project directory:
-
+```bash
 cd <looks-test>
+```
 
 Install dependencies:
 
