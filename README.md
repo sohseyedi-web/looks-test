@@ -30,6 +30,8 @@ Component Structure: The project is divided into small, reusable components to i
 
 Lazy Loading: Implemented lazy loading for images to enhance performance and user experience.
 
+Custom Hook: A custom hook was implemented for data fetching as an alternative approach to demonstrate another method for API integration.
+
 ## Installation
 
 Clone the repository:
