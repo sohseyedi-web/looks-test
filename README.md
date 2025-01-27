@@ -38,7 +38,7 @@ git clone <https://github.com/sohseyedi-web/looks-test>
 
 Navigate to the project directory:
 
-cd <project-folder>
+cd <looks-test>
 
 Install dependencies:
 
